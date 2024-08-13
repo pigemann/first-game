@@ -25,12 +25,11 @@ public:
 	}
 };
 void waitforenter();
-string monsterfight (string , int& , int , int , int , int , entity );
+void monsterfight (string , int& , int , int& , int , int , entity ,int );
 void clearScreen();
 void lvl_up ( int& , int& , int& , int& , int& );
-void fight(string name, int& hp, int damage, int& xp, int& lvl, int& xp_, int m) {
+int fight(string name, int& hp, int& damage, int& xp, int& lvl, int& xp_, int& m, entity dragon ) {
 	string msg;
-	entity dragon( "dragon",1000, 50000, 250 );
 	entity goblin( "goblin",20 , 25 , 5 );
 	entity zombie("zombie", 70, 150, 20);
 	entity squeleten( "squeleten",100, 300 , 50 );
@@ -42,28 +41,28 @@ void fight(string name, int& hp, int damage, int& xp, int& lvl, int& xp_, int m)
 	case 1:
 		if (a >= 30) {
 
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, goblin);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, goblin, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (30 > a >= 10) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, zombie);
+		else if (30 > a && a >= 10) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, zombie, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (10 > a >= 5) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, squeleten);
+		else if (10 > a && a >= 5) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, squeleten, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (5 > a >= 3) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, troll);
+		else if (5 > a && a >= 3) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 		else {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, g_troll);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, g_troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 
@@ -71,28 +70,28 @@ void fight(string name, int& hp, int damage, int& xp, int& lvl, int& xp_, int m)
 	case 2:
 		if (a >= 50) {
 
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, goblin);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, goblin, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (50 > a >= 20) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, zombie);
+		else if (50 > a && a >= 20) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, zombie, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (20 > a >= 10) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, squeleten);
+		else if (20 > a && a >= 10) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, squeleten, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (10 > a >= 7) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, troll);
+		else if (10 > a && a >= 7) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 		else {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, g_troll);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, g_troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 
@@ -100,28 +99,28 @@ void fight(string name, int& hp, int damage, int& xp, int& lvl, int& xp_, int m)
 	case 3:
 		if (a >= 70) {
 
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, goblin);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, goblin, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (70 > a >= 40) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, zombie);
+		else if (70 > a && a >= 40) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, zombie, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (40 > a >= 20) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, squeleten);
+		else if (40 > a && a >= 20) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, squeleten, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (20 > a >= 12) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, troll);
+		else if (20 > a && a >= 12) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 		else {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, g_troll);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, g_troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 
@@ -129,28 +128,28 @@ void fight(string name, int& hp, int damage, int& xp, int& lvl, int& xp_, int m)
 	case 4:
 		if (a >= 80) {
 
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, goblin);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, goblin, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (80 > a >= 65) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, zombie);
+		else if (80 > a && a >= 65) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, zombie, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (65 > a >= 45) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, squeleten);
+		else if (65 > a && a >= 45) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, squeleten, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (45 > a >= 15) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, troll);
+		else if (45 > a && a >= 15) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 		else {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, g_troll);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, g_troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 
@@ -158,55 +157,59 @@ void fight(string name, int& hp, int damage, int& xp, int& lvl, int& xp_, int m)
 	case 5:
 		if (a >= 95) {
 
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, goblin);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, goblin, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (95 > a >= 80) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, zombie);
+		else if (95 > a && a >= 80) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, zombie, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (80 > a >= 60) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, squeleten);
+		else if (80 > a && a >= 60) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, squeleten, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
-		else if (60 > a >= 35) {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, troll);
+		else if (60 > a && a >= 35) {
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 		else {
-			
-			msg = monsterfight(name, hp, damage, xp, lvl, xp_, g_troll);
+
+			monsterfight(name, hp, damage, xp, lvl, xp_, g_troll, m);
 			lvl_up(xp, xp_, lvl, damage, m);
 		}
 
 		break;
 	case 6:
 		cout << name << " : i am here to take your soul fucking dragon ";
-		msg = monsterfight(name, hp, damage, xp, lvl, xp_, dragon);
+		monsterfight(name, hp, damage, xp, lvl, xp_, dragon, m);
 		lvl_up(xp, xp_, lvl, damage, m);
 		break;
+		a = 0;
 	}
+	if (lvl== 7)  return 0 ;
+	return 1;
 };
 string story() {
 	string name;
 	cout << "what is you name "<< endl;
 	cin >> name;
 	clearScreen();
-	cout << "Hello, " << name << "." << endl << "Our beloved Queen Pigeman is in grave danger, held captive by a dragon." << endl << "Your mission is to journey to her rescue." << endl << "Along the way, you will face challenges that will help you grow stronger and more skilled." << endl << "This journey is not just about reaching the dragon but also about becoming the hero you are destined to be." << endl << "---> press entre to continue " << endl ;
+	cout << "Hello, " << name << "." << endl << "Our beloved Queen Pigeman is in grave danger, held captive by a dragon." << endl << "Your mission is to journey to her rescue." << endl << "Along the way, you will face challenges that will help you grow stronger and more skilled." << endl << "This journey is not just about reaching the dragon but also about becoming the hero you are destined to be." << endl  ;
 	waitforenter();
 	return (name);
 };
 
 string adventure(string name_) {
-	int dragon_hp = 1;
-	player player_( name_ , 100, 0, 10);
+	int b = 1;
+	entity dragon("dragon", 1000, 50000, 250);
+	player player_( name_ , 100, 7810, 10);
 	player_.xp_needed = 10;
 	player_.lvl = 1;
-	int choice, a;
+	int choice, a = 0 ;
 	int m = player_.hp;
 	do {
 		cout << "1.advance" << endl << "2.rest" << endl;
@@ -215,18 +218,19 @@ string adventure(string name_) {
 		switch (choice)
 		{
 		case 1:
+			
 			a = (rand() % 3) + 1;
 			switch (a)
 			{
 			default:
-				cout << "you encoutred a monster" << endl << "---> press entre to continue " << endl;
+				cout << "you encoutred a monster" << endl ;
 				waitforenter();
 				clearScreen();
-				fight (player_.name, player_.hp, player_.damage, player_.xp, player_.lvl, player_.xp_needed, m);
-
+				b = fight (player_.name, player_.hp, player_.damage, player_.xp, player_.lvl, player_.xp_needed, m , dragon );
+				a = 0;
 				break;
 			case 1:
-				cout << "looks like its safe for now" << endl << "---> press entre to continue " << endl;
+				cout << "looks like its safe for now" << endl ;
 				waitforenter();
 				clearScreen();
 				a = 0;
@@ -238,35 +242,54 @@ string adventure(string name_) {
 			a++;
 			switch (a)
 			{
-			case (1 || 2 || 3):
-				if (player_.hp > m - ((double)m * (20 / 100)))
+			case (1):
+				if (player_.hp > m - ((double)m * 0.2))
 				{
 					player_.hp = m;
 				}
 				else {
-					player_.hp += m * (20 / 100);
+					player_.hp += (double) m * 0.2 ;
 				}
+				cout << "main main " << endl;
 				break;
-			default:
-				cout << "you are getting tired ." << endl << "be carefull if you fall asleep you will die" << endl << "---> press entre to continue " << endl;
-				waitforenter();
-				clearScreen();
+			case (2):
+				if (player_.hp > m - ((double)m * 0.2))
+				{
+					player_.hp = m;
+				}
+				else {
+					player_.hp += (double)m * 0.2;
+				}
+				cout << "main main " << endl;
+				break;
+			case (3):
+				if (player_.hp > m - ((double)m * 0.2))
+				{
+					player_.hp = m;
+				}
+				else {
+					player_.hp += (double)m * 0.2;
+				}
+				cout << "main main " << endl;
 				break;
 			case 6:
 				cout << name_ << ":ahhh i feel tired i should probably take a nap. " << endl << "zzzzzzzzzzzzzzzzzzzzzzz";
 				player_.hp = 0;
-				clearScreen();
+				break;
+			default:
+				cout << "you are getting tired ." << endl << "be carefull if you fall asleep you will die" << endl;
 				break;
 			}
-			break;
+		break;
 		default:
-			cout << "invalid choice press entre et continue " << endl;
-			waitforenter();
-			clearScreen();
+			cout << "invalid choice " << endl;
 			break;
 		}
-	} while (player_.hp != 0 && dragon_hp != 0);
-	if (player_.hp == 0) {
+		cout <<"b is " << b << endl;
+		waitforenter();
+		clearScreen();
+	} while (player_.hp > 0 && b == 1 );
+	if (player_.hp <= 0) {
 		return "you lost";
 	}
 	else {
@@ -279,12 +302,12 @@ void clearScreen() {
 };
 
 
-string monsterfight(string name, int& hp, int damage, int xp, int lvl, int xp_, entity monster) {
+void monsterfight(string name, int& hp, int damage, int& xp, int lvl, int xp_, entity monster ,int  maxhealth) {
 	int random_num ;
 	cout << name << ":back  off dirty "<< monster.name <<endl ;
 	do {
 		cout << "name:" << name << "         lvl:" << lvl << endl;
-		cout << "health:" << hp << "    |    monster hp:" << monster.hp << endl;
+		cout << "health:" << maxhealth <<"/"<< hp << "    |    monster hp:" << monster.hp << endl;
 		cout << "damage:" << damage << "    |    monster damage:" << monster.damage << endl;
 		cout << "xp:" << xp << endl;
 		cout << "xp for next lvl:" << xp_ << endl;
@@ -294,7 +317,7 @@ string monsterfight(string name, int& hp, int damage, int xp, int lvl, int xp_, 
 		{
 		default:
 			clearScreen();
-			cout << "invalid choice press entre et continue " << endl;
+			cout << "invalid choice " << endl;
 			waitforenter();
 			break;
 		case 1:
@@ -303,7 +326,7 @@ string monsterfight(string name, int& hp, int damage, int xp, int lvl, int xp_, 
 			break;
 		case 2:
 			clearScreen();
-			cout << "hell nah bro i am not fighting that thing" << endl << "----> press entre to continue";
+			cout << "hell nah bro i am not fighting that thing" << endl ;
 			waitforenter();
 			break;
 		}
@@ -311,15 +334,17 @@ string monsterfight(string name, int& hp, int damage, int xp, int lvl, int xp_, 
 
 	} while (hp > 0 && monster.hp > 0 && random_num != 2);
 	if (hp <= 0) {
-		return "you died";
+		cout << "you died" << endl ;
 	}
 	else if (monster.hp <= 0) {
-		return "well played ";
+		xp += monster.xp;
+		cout <<  "well played " << endl ;
 	}
 	else {
-		return "that was a close one ";
+		cout << "that was a close one " << endl ;
 	}
-
+	waitforenter();
+	clearScreen();
 };
 
 void lvl_up(int& xp, int& xp_, int& lvl, int& damage, int& maxhealth) {
@@ -327,12 +352,13 @@ void lvl_up(int& xp, int& xp_, int& lvl, int& damage, int& maxhealth) {
 	do {
 		test = true;
 		if (xp >= xp_) {
-			xp -= xp_;
-			xp_ += xp_ * xp_;
+			damage += damage*2 ;
+			xp = xp - xp_;
+			xp_ += xp_ * 4;
 			lvl++;
-			damage += damage * 2;
 			maxhealth += maxhealth * 3;
 			test = false;
+			cout << "good job lvl up"<< endl ;
 		}
 	} while (!test);
 };
